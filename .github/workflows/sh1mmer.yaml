@@ -1,4 +1,4 @@
-name:sh1mmer (non-leagecy) with selective shims
+name:sh1mmer
 
 on:
   workflow_dispatch:
