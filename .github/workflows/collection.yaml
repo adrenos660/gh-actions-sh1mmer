@@ -1,6 +1,6 @@
-name:collection
-
-on:
+  name: collection
+  
+"on":
   workflow_dispatch:
     inputs:
       tag:
