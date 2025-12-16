@@ -1,4 +1,4 @@
-name:sh1mmer gui
+name:gui
 
 on:
   workflow_dispatch:
