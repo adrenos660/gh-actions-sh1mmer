@@ -1,6 +1,6 @@
-name:gui
+name: gui
 
-on:
+"on":
   workflow_dispatch:
     inputs:
       tag:
