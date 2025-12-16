@@ -40,7 +40,7 @@ jobs:
         unzip "./${board}.zip"
         shim=$(unzip -Z1 "./${board}.zip")
         rm ./${board}.zip
-        sudo ./wax/wax.sh -i "$shim" -p 
+        sudo ./wax/wax.sh -i "$shim" 
 
     - name: Upload built shim
       uses: softprops/action-gh-release@v2
