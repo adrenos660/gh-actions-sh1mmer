@@ -1,0 +1,88 @@
+name: gui artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag'
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        board:
+          - ambassador
+          - banon
+          - brask
+          - brya
+          - clapper
+          - coral
+          - corsola
+          - cyan
+          - dedede
+          - edgar
+          - elm
+          - enguarde
+          - fizz
+          - glimmer
+          - grunt
+          - hana
+          - hatch
+          - jacuzzi
+          - jacuzzi_makomo
+          - kalista
+          - kefka
+          - kukui
+          - lulu
+          - nami
+          - nissa
+          - octopus
+          - orco
+          - puff
+          - pyro
+          - reef
+          - reks
+          - relm
+          - sand
+          - sentry
+          - snappy
+          - stout
+          - strongbad
+          - tidus
+          - trogdor
+          - ultima
+          - volteer
+          - zork
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Legacy Sh1mmer
+        env:
+          board: ${{ matrix.board }}
+        run: |
+          set -e
+
+          chmod +x ./wax/wax.sh
+          sudo apt update
+          sudo apt install -y pv wget unzip
+
+          echo "Downloading file from https://dl.cros.download/files/${board}/${board}.zip..."
+          wget -q "https://dl.cros.download/files/${board}/${board}.zip" -O "./${board}.zip"
+
+          unzip "./${board}.zip"
+          shim=$(unzip -Z1 "./${board}.zip")
+          rm "./${board}.zip"
+
+          echo "Using shim: $shim"
+          sudo ./wax/wax.sh -i "$shim"
+
+      - name: Upload built shim as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-sh1mmer-${{ matrix.board }}
+          path: ./${{ matrix.board }}.bin
