@@ -1,4 +1,4 @@
-name:sh1mmer collection
+name:collection
 
 on:
   workflow_dispatch:
@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         board:
-
           - dedede
           - hana
           - hatch
