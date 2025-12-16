@@ -1,4 +1,4 @@
-name: collection
+name: collection artifact
 
 on:
   workflow_dispatch:
