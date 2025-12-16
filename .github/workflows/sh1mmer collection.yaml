@@ -1,4 +1,4 @@
-name:sh1mmer
+name:sh1mmer collection
 
 on:
   workflow_dispatch:
