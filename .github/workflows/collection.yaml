@@ -1,4 +1,4 @@
-  name: collection
+name: collection
   
 "on":
   workflow_dispatch:
