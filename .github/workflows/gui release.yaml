@@ -1,4 +1,4 @@
-name: gui
+name: gui release
 
 "on":
   workflow_dispatch:
