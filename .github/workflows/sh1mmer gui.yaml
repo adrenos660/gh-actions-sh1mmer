@@ -1,4 +1,4 @@
-name:sh1mmer (non-leagecy)
+name:sh1mmer gui
 
 on:
   workflow_dispatch:
