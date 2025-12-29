@@ -59,7 +59,7 @@ usb() {
 }
 
 fix_gbb() {
-	/usr/share/vboot/bin/set_gbb_flags.sh 0x0
+	/usr/share/vboot/bin/set_gbb_flags.sh 0x80b1
 }
 
 disable_verity() {
