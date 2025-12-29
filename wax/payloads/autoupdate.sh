@@ -9,7 +9,7 @@ else
     exit 1
 fi
 
-url="https://api.github.com/repos/MercuryWorkshop/sh1mmer"
+url="https://api.github.com/repos/adrenos660/gh-actions-sh1mmer"
 content_url="${url}/contents/wax/payloads?ref=beautifulworld"
 
 if ! command -v jq &> /dev/null; then
